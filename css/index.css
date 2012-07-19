@@ -1,0 +1,57 @@
+
+body { 
+	height: 100%;
+	overflow: hidden;
+	background: url("../media/galaxy.png") repeat; 
+}
+@-webkit-keyframes fade-in-out {
+	0% { opacity:0; }
+	16%   { opacity:1; }
+	84%   { opacity:1; }
+	100%   { opacity:0; }
+}
+@-webkit-keyframes logo {
+	0% { -webkit-transform: translateZ(0); opacity:1;}
+	50% { -webkit-transform: translateZ(-50000px); opacity:1; }
+	60% { -webkit-transform: translateZ(-60000px); opacity:0; }
+	100%   { -webkit-transform: translateZ(-100000px); opacity:0;}
+}
+@-webkit-keyframes crawl {
+	0% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(1100px);opacity:1;}
+	40% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(-340px);opacity:1;}
+	80% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(-1780px);opacity:0;}
+	100% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(-2500px);opacity:0;}
+}
+#stage {
+	height:600px;
+	width:1000px;
+	margin: 0 auto;
+	-webkit-perspective:800;
+	-webkit-perspective-origin:center 300px;
+}
+
+#CSS3 {
+	color: white;
+	font-size: 72px;
+	opacity:1;
+	width: 100px;
+	margin: 200px auto;
+	-webkit-transform-origin:center center;
+	-webkit-animation:logo 25s linear;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-delay: 6s;
+	-webkit-animation-timing-function: ease-in;
+}
+
+#crawl {
+	margin: 0 auto;
+	color: #FCDF2B;
+	text-align:left;
+	font-size:36px;
+	opacity:0;
+	-webkit-animation:crawl 60s linear;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-delay:0s;
+	-webkit-transform-style:preserve-3d;
+}
+#crawl p { white-space: pre; }

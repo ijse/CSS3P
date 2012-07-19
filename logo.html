@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta name="charset" value="utf-8" />
+		<meta name="author" value="ijse" />
+		<title> LOGO changyou </title>
+		<style>
+			.logo {
+				position: relative;
+				width: 100px;
+				height: 100px;
+				border: 1px solid #ddd;
+				margin: 0 auto;
+			}
+			.logo .circle {
+				position: absolute;
+				background: -webkit-radial-gradient(30% 30%, ellipse cover, rgba(239,181,64,0.66) 3%,rgba(247,198,12,0.66) 22%,rgba(247,199,9,0.66) 23%,rgba(247,198,2,0.68) 28%,rgba(255,76,0,0.86) 69%,rgba(255,76,0,1) 100%);
+				width: 30%;
+				height: 30%;
+				left: 15%;
+				top: 2%;
+				display: block;
+				border-radius: 100%;
+				box-shadow: #FF4C00 0 0 4px 0px;
+			}
+			.logo .center {
+				position: absolute;
+				width: 40%;
+				height: 40%;
+				background:-webkit-linear-gradient(-60deg, #ff8dc0 35%,#ff0097 60%);; 
+				top: 60%;
+				left: 55%;
+				margin-left: -25%;
+				margin-top: -25%;
+				box-shadow: #FF0097 0 0 1px 0, #000 0 3px 3px 0;
+				z-index: 99;
+			}
+			.logo .center b {
+				width: 50%;
+				height: 50%;
+				position: absolute;
+				
+			}
+			.logo .center .wt { 
+				top: -50%; right: 0;
+				border-radius: 10% 10% 0 0;
+				background-color: #FF8DC0;
+				box-shadow: #FF8DC0 0 0 3px 0, #FF8DC0 0 3px 0 0, #000 0 1px 3px 0;
+			}
+			.logo .center .wl { 
+				top: 0; left: -50%; 
+				border-radius: 10%  0 0 10% ; 
+				background-color: #FF8DC0;
+				box-shadow: #FF8DC0 0 0 3px 0, #FF8DC0 3px 0 0 0, #000 0 3px 3px 0;
+			}
+			.logo .center .wr { 
+				top: 50%; right: -50%; 
+				border-radius: 0 10%  10%  0; 
+				background-color: #FF0097; 
+				box-shadow: #FF0097 0 0 3px 0, #FF0097 -3px 0 0 0, #000 -1px 3px 3px 0;
+			}
+			.logo .center .wb { 
+				top: 100%; left: 0; 
+				border-radius: 0 0 10%  10%; 
+				background-color: #FF0097;
+				box-shadow: #FF0097 0 0 3px 0, #000 0 3px 3px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="logo">
+			<i class="circle"></i>
+			<div class="center">
+				<b class="wt"></b>
+				<b class="wr"></b>
+				<b class="wl"></b>
+				<b class="wb"></b>
+			</div>
+		</div>
+	</body>
+</html>

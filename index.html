@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>CSS3 by ijse NAD</title>
+	<style type="text/css">
+	body {
+		background:black url("./media/bg.png");
+		overflow: hidden;
+	}
+	@-webkit-keyframes fade-in-out {
+		0% { opacity:0; }
+		16%   { opacity:1; }
+		84%   { opacity:1; }
+		100%   { opacity:0; }
+	}
+	@-webkit-keyframes logo {
+		0% { -webkit-transform: translateZ(0); opacity:1;}
+		30% { -webkit-transform: translateZ(-1000px); opacity:1; }
+		50% { -webkit-transform: translateZ(-50000px); opacity:1; }
+		60% { -webkit-transform: translateZ(-60000px); opacity:1; }
+		100% { -webkit-transform: translateZ(-90000px); opacity:0;}
+	}
+	@-webkit-keyframes crawl {
+		0% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(100px);opacity:1;}
+		40% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(-340px);opacity:1;}
+		80% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(-1780px);opacity:1;}
+		100% { -webkit-transform:rotateX(60deg) translateZ(200px) translateY(-2000px);opacity:0;}
+	}
+	#stage {
+		width:1000px;
+		overflow:hidden;
+		margin: 0 auto;
+		-webkit-perspective:800;
+		-webkit-perspective-origin:center 300px;
+	}
+	#crawl {
+		color:rgb(252,223,43);
+		text-align:center;
+		font-size:36px;
+		opacity:0;
+		-webkit-animation:crawl 85s linear;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:0;
+		-webkit-transform-style:preserve-3d;
+	}
+	#far-far-away {
+		color:rgb(75,213,238);
+		font-size:32px;
+		line-height:1.5;
+		position:absolute;
+		top:200px;
+		left:190px;
+		opacity:0;
+		-webkit-animation:fade-in-out 6s linear;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay:2s;
+	}
+	
+	#crawl p.title {
+		font-size:96px;
+		-webkit-transform:scaleX(0.6);
+	}
+	
+	#crawl p {
+		width:600px;
+		margin: 10px auto;
+		/*white-space:pre;*/
+		line-height: 1.2em;
+	}
+	
+	img {
+		opacity:0;
+		position:absolute;
+		top:100px;
+		width:1000px;
+		-webkit-transform-origin:center center;
+		-webkit-animation:logo 6s linear;
+		-webkit-animation-iteration-count: 1;
+		-webkit-animation-delay: 9s;
+		-webkit-animation-timing-function: ease-in;
+	}
+
+	</style>
+</head>
+<body>
+	
+	<div id="stage">
+	<img src="./media/css3.png" alt="Star Wars">
+	
+	<p id="far-far-away">
+		21世纪初，伴随着互联网技术的飞速发展，<br/>
+		出现了。。。
+	</p>
+	
+	<div id="crawl">
+		<p style="white-space:pre;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</p>
+		<p class="episode">The World Wide Web</p>
+		<div class="title">A New Hope</div>
+		<p>
+			在Web开发的早期，新技术不断涌现。
+			但是在后来十几年的时间里，
+			技术经历了一个发展的停滞期。
+			随着互联网和移动互联网的飞速发展，
+			动画、视频、3D等富文本技术的不断革新，
+			用户对视觉方面的要求越来越高，
+			人们发现旧的CSS标准已经难以Web开发的需要，
+			暴露出可控性差、视觉表现力弱、
+			缺少自定义能力等不足。
+			尤其对于PC和移动设备来说，
+			CSS的能力和表现力要远远逊色于Flash。
+		</p>
+		<P>
+			从2001年开始，下一代的CSS技术
+			CSS34作为草案一直在完善和发展中。
+			IE、Firefox、Opera、Chrome、Safari等主流浏览器
+			也在不断地提供对CSS3特性的支持。
+			CSS3极大地改变了我们编写网页和Web应用的方式，
+			并发挥着越来越重要的作用，
+			它将和HTML5一样共同成为未来的Web标准。
+		</P>
+	</div>
+	</div>
+	<audio src="media/star-wars.m4a" autobuffer="autobuffer" autoplay="autoplay" onended="window.location.href='main.html'" />
+
+</body>
+</html>

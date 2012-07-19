@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+
+<meta charset="utf-8">
+<title>cubic-bezier demo</title>	
+<link rel="shortcut icon" />
+<link href="cubic-bezier_files/style.css" rel="stylesheet">
+</head> 
+<body data-twttr-rendered="true"> 
+
+<header>
+	<h1>
+		<a href="./cubic-bezier_files/cubic-bezier.htm">
+			<code>
+				cubic-bezier(<span id="values"><span id="P1x" class="param">.17</span>,<span id="P1y" class="param">.67</span>,<span id="P2x" class="param">.83</span>,<span id="P2y" class="param">.67</span></span>)
+			</code>
+		</a>
+	</h1>
+</header>
+
+<div class="coordinate-plane" data-time="44" data-progression="146"> 
+	<span class="control-point" id="P0"></span> 
+	<button class="control-point" id="P1" style="left:50px; top: 250px;"></button>
+	<button class="control-point" id="P2" style="left:250px; top: 250px;"></button>
+	<span class="control-point" id="P3"></span>
+
+	<canvas height="600" width="300" id="curve"></canvas>
+</div>
+
+<section id="preview">
+	<h1>
+		对比演示
+		<button id="go">Go!</button>
+	</h1>
+	<p>
+		<label for="duration">duration:</label>
+		<input type="range" id="duration" value="1" min="0.1" max="10" step="0.1" pattern="\d*\.?\d+" size="3">
+		<output for="duration">1 second</output>
+	</p>
+	<canvas id="current" width="60" height="60" style="-webkit-transition: cubic-bezier(0.17, 0.67, 0.83, 0.67); -webkit-transition-duration: 1s; "></canvas>
+	<canvas id="compare" width="60" height="60" style="-webkit-transition: 1s cubic-bezier(0.25, 0.1, 0.25, 1); "></canvas>
+</section>
+
+<section id="library">
+	<h1>
+		预置
+	</h1>
+	<p></p>
+
+</section>
+
+<script src="./cubic-bezier_files/chainvas.min.js"></script> 
+<script src="./cubic-bezier_files/environment.js"></script> 
+<script src="./cubic-bezier_files/cubic-bezier.js"></script> 
+<script src="./cubic-bezier_files/interaction.js"></script> 
+<!-- 
+<script src="./cubic-bezier_files/widgets.js"></script>
+<script src="./cubic-bezier_files/ga.js" async=""></script>
+-->
+</body></html>
