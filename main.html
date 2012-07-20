@@ -46,12 +46,12 @@
                 CSS3的标准写法目前还不能被所有浏览器支持，许多浏览器需要加上自身特殊的前缀，例如线性渐变<code>linear-gradient</code>属性在WebKit内核浏览器里的写法为<code>-webkit-linear-gradient</code>, 在Opera浏览器里的写法为<code>-o-linear-gradient</code>, 在Firefox浏览器里的写法为<code>-moz-linear-gradient</code>。
             </p>
             <ul>
-                <li>-o-:        Opera浏览器特有前缀，o表示Opera。</li>
-                <li>-webkit-:   WebKit内核浏览器特有前缀，适用于Safari和Chrome浏览器。</li>
-                <li>-khtml-:    KHTML内核浏览器特有前缀。</li>
-                <li>-moz-:      Firefox浏览器特有的前缀，moz即Mozilla的缩写。</li>
-                <li>-icab-:     iCab浏览器特有前缀。</li>
-                <li>-ms-:       IE浏览器特有前缀，目前仅支持IE9和IE10。</li>
+                <li><code>-o-</code>:        Opera浏览器特有前缀，o表示Opera。</li>
+                <li><code>-webkit-</code>:   WebKit内核浏览器特有前缀，适用于Safari和Chrome浏览器。</li>
+                <li><code>-khtml-</code>:    KHTML内核浏览器特有前缀。</li>
+                <li><code>-moz-</code>:      Firefox浏览器特有的前缀，moz即Mozilla的缩写。</li>
+                <li><code>-icab-</code>:     iCab浏览器特有前缀。</li>
+                <li><code>-ms-</code>:       IE浏览器特有前缀，目前仅支持IE9和IE10。</li>
             </ul>
         </div>
         <!-- 
@@ -87,23 +87,23 @@
         -->
         <div id="transition" class="step slide" data-x="1000" data-y="-1500">
             <div class="slide-body">
-                <code class="prettify">transition: all 1.5s;</code>
+                <code class="prettyprint">transition: all 1.5s;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s;">
                     <div class="ball"></div>
                 </div>
-                <code class="prettify">transition: all 1.5s ease-in;</code>
+                <code class="prettyprint">transition: all 1.5s ease-in;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s ease-in;">
                     <div class="ball"></div>
                 </div>
-                <code class="prettify">transition: all 1.5s ease-out;</code>
+                <code class="prettyprint">transition: all 1.5s ease-out;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s ease-out;">
                     <div class="ball"></div>
                 </div>
-                <code class="prettify">transition: all 1.5s ease-in-out;</code>
+                <code class="prettyprint">transition: all 1.5s ease-in-out;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s ease-in-out;">
                     <div class="ball"></div>
                 </div>
-                <p><button onclick="stepFn.ballSlide(this)">Show</button></p>
+                <p><button onclick="stepFn.ballSlide(this)" class="ml-btn-3">Show</button></p>
             </div>
         </div>
         <!--
@@ -116,16 +116,13 @@
         <div class="step" data-x="-2000" data-y="-1000" data-rotate-x="60" data-rotate-y="90">
             <h1>圆角实现 --></h1>
         </div>
-        <div id="radius" class="step" data-x="-2000" data-y="-500">
-            <iframe src="./border-radius/index.htm" width="900" height="700"></iframe>
-        </div>
-        <div id="radius2" class="step slide" data-x="-1000" data-y="-500">
+        <div id="radius2" class="step slide" data-x="-2000" data-y="-500">
             <h1>border-radius的格式如下：</h1>
-            <code>[水平半径]{1,4} [/ 垂直半径{1,4}]?</code>
+            <code>border-radius: [水平半径]{1,4} [/ 垂直半径{1,4}]?</code>
             <br /><br />
             <div>
                 例子：
-                <pre class="prettyprint">
+                <pre class="prettyprint linenums">
 .demo {
   border-radius: 10px 20px;
 } 
@@ -139,6 +136,242 @@
             </div>
             <img src="./media/border-radius.png" />
         </div>
+        <div id="radius" class="step" data-x="-1000" data-y="-500">
+            <iframe src="./border-radius/index.htm" width="900" height="700"></iframe>
+        </div>
+
+
+
+        <div class="step" data-x="0" data-y="-1000" data-rotate-x="60" data-rotate-y="90">
+            <h1>阴影实现 --></h1>
+        </div>
+        <div id="shadow" class="step slide" data-x="0" data-y="-500">
+            <h1> 盒子阴影与文字阴影 </h1>
+            <pre class="prettyprint">
+-webkit-box-shadow: 5px 5px 10px 5px #000;
+box-shadow: 5px 5px 10px 5px #000;
+text-shadow: 1px 1px 3px #000;</pre>
+            <div class="preview">
+                Preview Area
+            </div>
+        </div>
+        <div id="shadow2" class="step slide" data-x="1000" data-y="-500">
+            <p> shadow 参数格式：</p>
+            <code>
+                box-shadow: 阴影类型 x轴位移 y轴位移 模糊半径 阴影大小 阴影颜色
+                <br/>
+                text-shadow: [颜色] x轴位移 y轴位移 [模糊半径]
+                <br/>
+                text-shadow: x轴位移 y轴位移 [模糊半径] [颜色]
+            </code>
+            <p>下面简要介绍一下其中各个参数的作用：</p>
+            <ol>
+                <li><code>阴影类型</code>不设置时，默认为外阴影，设置为inset时表示内阴影。</li>
+                <li><code>x轴位移</code>表示阴影在水平方向上的位移,可取正负。</li>
+                <li><code>y轴位移</code>表示阴影在垂直方向上的位移,可取正负。</li>
+                <li><code>模糊半径</code>控制阴影的模糊区域大小，值为0表示阴影不模糊。</li>
+                <li><code>阴影大小</code>控制阴影的大小和范围。</li>
+            </ol>
+        </div>
+
+        <!-- 
+            两种背景颜色渐变
+        -->
+        <div class="step" data-x="2000" data-y="-1000" data-rotate-x="60" data-rotate-y="90">
+            <h1>背景渐变 --></h1>
+        </div>
+        <div id="gradient" class="step slide" data-x="2000" data-y="-500">
+            <p>背景渐变分为两种类型：<code>线性渐变</code>和<code>径向渐变</code>。</p>
+            <dl>
+                <dt>线性渐变</dt>
+                <dd>
+                    <img src="./media/webkit-gradient.png" style="zoom:1.2" />
+                    <img src="./media/webkit-gradient-new.png" style="zoom:1.2" />
+                </dd>
+                <dd>
+                    <div class="demo"></div>
+                    <div class="demo"></div>
+                    <div class="demo"></div>
+                    <div class="demo"></div>
+                </dd>
+        </div>
+        <div id="gradient2" class="step slide" data-x="-2000" data-y="500">
+            <dl>
+                <dt>径向渐变</dt>
+                <dd>
+                    <div class="demo"></div>
+                    <div class="demo"></div>
+                    <div class="demo"></div>
+                    <div class="demo"></div>
+                </dd>
+                <dd style="clear:both;"></dd>
+
+                <dd>
+                    <pre class="prettyprint">
+-webkit-radial-gradient(
+    [&lt;bg-position&gt; || &lt;angle&gt;,]? 
+    [&lt;shape&gt; || &lt;size&gt;,]? 
+    &lt;color-stop&gt;, 
+    &lt;color-stop&gt;
+    [, &lt;color-stop&gt;]*
+);
+                    </pre>
+                </dd>
+            </dl>
+        </div>
+
+        <!-- 
+            两种背景颜色渐变
+        -->
+        <div class="step" data-x="-1000" data-y="0" data-rotate-x="60" data-rotate-y="90">
+            <h1>变形 --></h1>
+        </div>
+        <div id="transform" class="step slide" data-x="-1000" data-y="500">
+            <p><code>transform</code>字面上就是变形，改变的意思。在CSS3中<code>transform</code>主要包括以下几种：旋转<code>rotate</code>、扭曲<code>skew</code>、缩放<code>scale</code>和移动<code>translate</code>以及矩阵变形<code>matrix</code>。</p>
+            <h1>语法:</h1>
+            <pre class="prettyprint">
+transform none | &lt;transform-function&gt; 
+                [ &lt;transform-function&gt; ]* 
+也就是：
+transform: rotate | scale | skew | translate |matrix;</pre>
+            <p>none:表示不进么变换；&lt;transform-function>表示一个或多个变换函数，以空格分开；换句话说就是我们同时对一个元素进行transform的多种属性操作，例如rotate、scale、translate三种，但这里需要提醒大家的，以往我们叠加效果都是用逗号（“，”）隔开，但transform中使用多个属性时却需要有空格隔开。</p>
+        </div>
+        <div id="transform2" class="step slide" data-x="0" data-y="500">
+            <h1>各种变换函数的演示:</h1>
+            <br/>
+            <div class="menu">
+                <ul class="clearfix">
+                  <li class="item translate"><a href="#">Translate</a></li>
+                  <li class="item translate-x"><a href="#">TranslateX</a></li>
+                  <li class="item translate-y"><a href="#">TranslateY</a></li>
+                  <li class="item rotate"><a href="#">Rotate</a></li>
+                  <li class="item scale"><a href="#">Scale</a></li>
+                  <li class="item scale-x"><a href="#">ScaleX</a></li>
+                  <li class="item scale-y"><a href="#">ScaleY</a></li>
+                  <li class="item skew"><a href="#">Skew</a></li>
+                  <li class="item skew-x"><a href="#">SkewX</a></li>
+                  <li class="item skew-y"><a href="#">SkewY</a></li>
+                  <li class="item matrix"><a href="#">Matrix</a></li>
+                </ul>
+            </div>
+            <div class="codearea">
+<pre class="prettyprint">
+.menu ul li.translate a:hover {
+    -moz-transform: translate(-10px,-10px);
+    -webkit-transform: translate(-10px,-10px);
+    -o-transform: translate(-10px,-10px);
+    -ms-transform: translate(-10px, -10px);
+    transform: translate(-10px,-10px);
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.translate-x a:hover {
+    -moz-transform: translateX(-10px);
+    -webkit-transform: translateX(-10px);
+    -o-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.translate-y a:hover {
+    -moz-transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    -o-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.rotate a:hover {
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.scale a:hover {
+    -moz-transform: scale(0.8,0.8);
+    -webkit-transform: scale(0.8,0.8);
+    -o-transform: scale(0.8,0.8);
+    -ms-transform: scale(0.8,0.8);
+    transform: scale(0.8,0.8);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.scale-x a:hover {
+    -moz-transform: scaleX(0.8);
+    -webkit-transform: scaleX(0.8);
+    -o-transform: scaleX(0.8);
+    -ms-transform: scaleX(0.8);
+    transform: scaleX(0.8);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.scale-y a:hover {
+    -moz-transform: scaleY(1.2);
+    -webkit-transform: scaleY(1.2);
+    -o-transform: scaleY(1.2);
+    -ms-transform: scaleY(1.2);
+    transform: scaleY(1.2);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.skew a:hover {
+    -moz-transform: skew(45deg,15deg);
+    -webkit-transform: skew(45deg,15deg);
+    -o-transform: skew(45deg,15deg);
+    -ms-transform: skew(45deg,15deg);
+    transform: skew(45deg,15deg);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.skew-x a:hover {
+    -moz-transform: skewX(-30deg);
+    -webkit-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    -ms-transform: skewX(-30deg);
+    transform: skewX(-30deg);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.skew-y a:hover {
+    -moz-transform: skewY(30deg);
+    -webkit-transform: skewY(30deg);
+    -o-transform: skewY(30deg);
+    -ms-transform: skewY(30deg);
+    transform: skewY(30deg);          
+}
+</pre>
+<pre class="prettyprint">
+.menu ul li.matrix a:hover {
+    -moz-transform: matrix(1,1,-1,0,0,0);
+    -webkit-transform: matrix(1,1,-1,0,0,0);
+    -o-transform: matrix(1,1,-1,0,0,0);
+    -ms-transform: matrix(1,1,-1,0,0,0);
+    transform: matrix(1,1,-1,0,0,0);          
+}
+</pre>
+        </div>
+        </div>
+
+        <!-- 
+            制作由帧构成的动画
+        -->
+        <div class="step" data-x="1000" data-y="0" data-rotate-x="60" data-rotate-y="90">
+            <h1>动画效果 --></h1>
+        </div>
+        <div id="animation" class="step slide" data-x="1000" data-y="500">
+            <h1>CSS3 Animation</h1>
+            <p>CSS3的动画效果是基于定义的关键帧实现的，类似FLASH动画；但是它只应用在页面上已存在的DOM元素上，灵活地运用CSS3的动画效果可以少写JS或省去编写FLASH动画，在一些场合下应用起来还是很方便的。</p>
+            <h1>Animation的语法如下：</h1>
+            <img src="./media/animation-pro.png" />
+        </div>
+        <div id="animation2" class="step slide" data-x="2000" data-y="500">
+            
+        </div>
 
 
         <!-- 
@@ -147,7 +380,7 @@
         <div id="doraemonDemo" class="step slide" data-x="-4000" data-y="0" >
             <img src="./media/doraemon.png" class="dora" />
             <p>
-                上面的图是某日本神人用 CSS3 画的。四个浏览里面 Chrome 的支持度最高，不仅圆角、阴影一应俱全，甚至连眼睛都还会动 @@。Firefox 3.6 次之，除了眼睛不会动之外都和 Chrome 相当，Opera 则是少了阴影。
+                上面的图是某日本神人用 CSS3 画的。四个浏览里面 Chrome 的支持度最高，不仅圆角、阴影一应俱全，甚至连眼睛都还会动。Firefox 3.6 次之，除了眼睛不会动之外都和 Chrome 相当，Opera 则是少了阴影。
             </p>
             <p>
                 IE6下的小叮当。。。如下：
@@ -223,13 +456,6 @@
             </div>
             <h2>当前浏览器下的Doraemon显示效果</h2>
         </div>
-
-
-
-
-
-
-
 
 
         <div id="overview" class="step" data-x="0" data-y="-500" data-z="-100" data-scale="10">

@@ -173,11 +173,31 @@ button {
     vertical-align: middle;
 }
 
-.step.act {
-    display: none;
+.step {
+    p {
+        margin: 10px 5px;
+        text-indent: 2em;
+    }
+    pre.prettyprint { padding: 20px;}
+    h1 { margin: 10px auto; }
+    code { 
+        font-size: 80%; 
+        color: black; 
+        padding: 0 5px;
+    }
+    dl {
+        dt {
+            color: black;
+            font-size: 120%;
+            text-shadow: 1px 1px 3px #000;
+            &:before { 
+                content: ">";
+                color: gray;
+            }
+        }
+        dd { margin-left: 40px; }
+    }
 }
 
-.step p {
-    margin: 10px 5px;
-    text-indent: 2em;
-}
+
+
