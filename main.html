@@ -70,11 +70,10 @@
                     <li><a href="#animation" class="ml-btn-7 rounded">动画</a></li>
                     <li><a href="#radius" class="ml-btn-5 rounded">圆角</a></li>
                     <li><a href="#shadow" class="ml-btn-9 rounded">阴影</a></li>
-                    <li><a href="#selector" class="ml-btn-11 rounded">选择器</a></li>
+                    <li><a href="#transform" class="ml-btn-11 rounded">变形</a></li>
+                    <li><a href="#transition" class="ml-btn-11 rounded">变换</a></li>
                     <li><a href="#fontStyle" class="ml-btn-13 rounded">字体</a></li>
                     <li><a href="#gradient" class="ml-btn-15 rounded">渐变</a></li>
-                    <li><a href="#optacity" class="ml-btn-17 rounded">透明色</a></li>
-                    <li><a href="#multiBackground" class="ml-btn-19 rounded">多背景</a></li>
                 </menu>
             </div>
         </div>
@@ -89,19 +88,19 @@
             <div class="slide-body">
                 <code class="prettyprint">transition: all 1.5s;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s;">
-                    <div class="ball"></div>
+                    <div class="ball" style="-webkit-transition: all 1.5s;"></div>
                 </div>
                 <code class="prettyprint">transition: all 1.5s ease-in;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s ease-in;">
-                    <div class="ball"></div>
+                    <div class="ball" style="-webkit-transition: all 1.5s ease-in;"></div>
                 </div>
                 <code class="prettyprint">transition: all 1.5s ease-out;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s ease-out;">
-                    <div class="ball"></div>
+                    <div class="ball" style="-webkit-transition: all 1.5s ease-out;"></div>
                 </div>
                 <code class="prettyprint">transition: all 1.5s ease-in-out;</code>
                 <div class="ball-rail" style="-webkit-transition: all 1.5s ease-in-out;">
-                    <div class="ball"></div>
+                    <div class="ball" style="-webkit-transition: all 1.5s ease-in-out;"></div>
                 </div>
                 <p><button onclick="stepFn.ballSlide(this)" class="ml-btn-3">Show</button></p>
             </div>
@@ -113,6 +112,10 @@
             <iframe src="./cubic-bezier/index.htm" width="900" height="700"></iframe>
         </div>
 
+
+        <!-- 
+            圆角实现 
+        -->
         <div class="step" data-x="-2000" data-y="-1000" data-rotate-x="60" data-rotate-y="90">
             <h1>圆角实现 --></h1>
         </div>
@@ -141,6 +144,9 @@
         </div>
 
 
+        <!-- 
+            阴影
+        -->
 
         <div class="step" data-x="0" data-y="-1000" data-rotate-x="60" data-rotate-y="90">
             <h1>阴影实现 --></h1>
@@ -221,7 +227,7 @@ text-shadow: 1px 1px 3px #000;</pre>
         </div>
 
         <!-- 
-            两种背景颜色渐变
+            变形
         -->
         <div class="step" data-x="-1000" data-y="0" data-rotate-x="60" data-rotate-y="90">
             <h1>变形 --></h1>
@@ -369,10 +375,38 @@ transform: rotate | scale | skew | translate |matrix;</pre>
             <h1>Animation的语法如下：</h1>
             <img src="./media/animation-pro.png" />
         </div>
-        <div id="animation2" class="step" data-x="2000" data-y="500">
+        <div id="animation2" class="step slide" data-x="2000" data-y="500">
+            <pre class="prettyprint">
+@keyframes IDENT {
+    from {
+        Properties:Properties value;
+    }
+    Percentage {
+        Properties:Properties value;
+    }
+    to {
+        Properties:Properties value;
+    }
+}
+   或者全部写成百分比的形式：
+@keyframes IDENT {
+    0% {
+        Properties:Properties value;
+    }
+    Percentage {
+        Properties:Properties value;
+    }
+    100% {
+        Properties:Properties value;
+    }
+}
+            </pre>
+        </div>
+        <div id="animation3" class="step " data-x="-2000" data-y="1500">
             <iframe src="" width="900" height="700"></iframe>
             <img src="./media/animationImg.png" />
         </div>
+
 
 
         <!-- 
@@ -459,7 +493,7 @@ transform: rotate | scale | skew | translate |matrix;</pre>
         </div>
 
 
-        <div id="overview" class="step" data-x="0" data-y="-500" data-z="-100" data-scale="10">
+        <div id="overview" class="step" data-x="0" data-y="-500" data-z="-100" data-scale="8">
         </div>
     </div>
 

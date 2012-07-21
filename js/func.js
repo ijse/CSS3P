@@ -15,9 +15,20 @@ $("#impress").bind("impress:stepenter", function() {
     var currentStep = $(this).find(".step.active");
     var nextStep = $(this).find(".step.future");
 
-    if(currentStep.is("#animation2")) {
-    	currentStep.find("iframe").attr("src", "animationDemo/index.htm").show();
-        currentStep.find("img").hide();
+    var theid = currentStep.attr("id");
+    switch(theid) {
+        case "animation3":
+            currentStep.find("iframe").attr("src", "animationDemo/index.htm").show();
+            currentStep.find("img").hide();
+            break;
+        case "transition":
+            var ballrail = currentStep.find(".ball-rail");
+            ballrail.addClass("active");
+            setTimeout(function() {
+                ballrail.removeClass("active");
+            }, 2000);
+            break;
+
     }
 });
 
@@ -27,10 +38,13 @@ $("#impress").bind("impress:stepleave", function(event) {
     var nextStep = $(this).find(".step.future:first");
 
     var _el = $(eng.lastEntered());
-    if(_el.attr("id") === "animation2") {
-        _el.find("iframe").attr("src", "").hide();
-        _el.find("img").show();
-    } 
+    var theid = _el.attr("id");
+    switch(theid) {
+        case "animation3":
+            _el.find("iframe").attr("src", "").hide();
+            _el.find("img").show();
+            break;
+    }
 });
 
 $("#transform2 .menu li").hover(function(e) {

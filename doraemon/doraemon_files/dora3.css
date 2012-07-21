@@ -582,7 +582,7 @@ div.hand_circle{
 	background:#fff;
 	background: -webkit-gradient(linear, right top, left bottom, from(#666),color-stop(0.83,#fff), to(#fff));	
 	background: -moz-linear-gradient(right top, #666, #fff 83%, #fff); 
-	top:-76px;
+	top:-71px;
 	left:127px;
 	border-top:2px solid #000;
 	border-right:2px solid #000;
