@@ -635,7 +635,13 @@
             init: init,
             goto: goto,
             next: next,
-            prev: prev
+            prev: prev,
+            lastEntered: function() {
+                return lastEntered;
+            },
+            activeStep: function() {
+                return activeStep;
+            }
         });
 
     };

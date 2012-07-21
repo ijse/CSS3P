@@ -14,8 +14,10 @@ $("#impress").bind("impress:stepenter", function() {
 	var lastStep = $(this).find(".step.past");
     var currentStep = $(this).find(".step.active");
     var nextStep = $(this).find(".step.future");
-    if(currentStep.is(".act")) {
-    	eng.next();
+
+    if(currentStep.is("#animation2")) {
+    	currentStep.find("iframe").attr("src", "animationDemo/index.htm").show();
+        currentStep.find("img").hide();
     }
 });
 
@@ -24,9 +26,10 @@ $("#impress").bind("impress:stepleave", function(event) {
     var currentStep = $(this).find(".step.active");
     var nextStep = $(this).find(".step.future:first");
 
-    if(lastStep.is("#gradient")) {
-    	console.log("is Gradient!!");
-    	return false;
+    var _el = $(eng.lastEntered());
+    if(_el.attr("id") === "animation2") {
+        _el.find("iframe").attr("src", "").hide();
+        _el.find("img").show();
     } 
 });
 
